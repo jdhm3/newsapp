@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}News{% endblock %}
+
+{% block content %}
+{% if "email" in session %}
+<div class="navbar-nav">
+    <a class="nav-item nav-link" href="/addnews">Click here to add news</a>
+
+</div>
+{% endif %}
+
+{% if not classes %}
+<h1>There are no news.</h1>
+{% else %}
+<h1>News are:</h1>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Headlines</th>
+        <th scope="col">Description</th>
+        <th scope="col">Author name</th>
+        <th scope="col">Category</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    {% for news in classes %}
+    <tr>
+        <td scope='row'>{{ news["headline"] }}</td>
+        <td>{{ news["Description"] }}</td>
+        <td>{{ news["Authorname"] }}</td>
+        <td>{{ news["newscategory"] }}</td>
+                      
+    </tr>
+    {% endfor %}
+    
+    </tbody>
+</table>
+{% endif %}
+
+
+{% endblock %}

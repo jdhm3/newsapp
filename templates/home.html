@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+{% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p>{{ message }}</p>
+    </div>
+{% endif %}
+
+<h1><center>The BroadCast</center></h1><br>
+<h2><center>Launch Date: 18th May 2021</center></h2><br>
+<h3>A leading Newpaper company has taken a new initiative to launch a web application for
+    collecting news and displaying them in a website.</h3>
+
+
+{% endblock %}
