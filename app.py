@@ -6,7 +6,7 @@ import bcrypt
 app=Flask(__name__)
 app.secret_key='testing'
 
-client = pymongo.MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false")
+client = pymongo.MongoClient("mongodb+srv://user:user@cluster0.e09md.mongodb.net/prafullaproject?")
 
 db = client.get_database('news')
 
