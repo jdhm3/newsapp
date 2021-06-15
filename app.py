@@ -6,9 +6,13 @@ import bcrypt
 app=Flask(__name__)
 app.secret_key='testing'
 
-client = pymongo.MongoClient("mongodb+srv://user:user@cluster0.e09md.mongodb.net/prafullaproject?")
+client = pymongo.MongoClient("mongodb+srv://user:user@cluster0.e09md.mongodb.net/prafullaproject?retryWrites=true&w=majority")
+if client:
+    print("connected")
 
-db = client.get_database('news')
+else: 
+    print("not connected")
+db = client.get_database('prafullaproject')
 
 newscollection = db.newscollection
 records = db.records
